@@ -18,8 +18,8 @@ public class App {
 //        em.close();
 //        emf.close();     
 
-//        ProdutoRepository repository = new ProdutoRepository();
-//        Produto p = repository.listar().get(0);
+        ProdutoRepository repository = new ProdutoRepository();
+        List<Produto> produtos = repository.listar();
 //        System.out.println(p.toString());  
 
 		// int[][] plan = new int[3][3];
@@ -33,11 +33,12 @@ public class App {
 		 * System.out.println("---------\n" + somaTotal);
 		 */
 
-		List<Produto> produtos = new ArrayList<Produto>();
-		produtos.add(new Produto("000001", "produto 1"));
-		produtos.add(new Produto("000002", "produto 2"));
-		produtos.add(new Produto("000003", "produto 3"));
-		produtos.add(new Produto("000004", "produto 4"));
+		/*
+		 * List<Produto> produtos = new ArrayList<Produto>(); produtos.add(new
+		 * Produto("000001", "produto 1")); produtos.add(new Produto("000002",
+		 * "produto 2")); produtos.add(new Produto("000003", "produto 3"));
+		 * produtos.add(new Produto("000004", "produto 4"));
+		 */
 		
 
 		ExportExcel export = new ExportExcel(produtos);
