@@ -15,15 +15,35 @@ public class Produto {
 	@Column(name = "produto")
 	private String descricao;
 	
-	public Produto() {
-		
-	}
+	@Column(name = "classificacao_fiscal")
+	private String ncm;
 	
-	public Produto(String codigo, String descricao) {
-		this.codigo = codigo;
-		this.descricao = descricao;
-	}
+	private String cest;
+	
+	private String cst;
+	
+	private String csosn;
+	
+	private String aliquota;
+	
+	private String reducao;
+	
+	private String cfop;
+	
+	private String ipi;
+	
+	private String piscofins;
 
+
+	
+	/*
+	 * public Produto() {
+	 * 
+	 * }
+	 * 
+	 * public Produto(String codigo, String descricao) { this.codigo = codigo;
+	 * this.descricao = descricao; }
+	 */
 	public String getCodigo() {
 		return codigo;
 	}
@@ -40,9 +60,76 @@ public class Produto {
 		this.descricao = descricao;
 	}
 
-	@Override
-	public String toString() {
-		return "Produto [codigo=" + codigo + ", descricao=" + descricao + "]";
+	public String getNcm() {
+		return ncm;
+	}
+
+	public void setNcm(String ncm) {
+		this.ncm = ncm;
+	}
+
+	public String getCfop() {
+		return cfop;
+	}
+
+	public void setCfop(String cfop) {
+		this.cfop = cfop;
+	}
+
+	public String getCst() {
+		return cst;
+	}
+
+	public void setCst(String cst) {
+		this.cst = cst;
+	}
+
+	public String getCsosn() {
+		return csosn;
+	}
+
+	public void setCsosn(String csosn) {
+		this.csosn = csosn;
+	}
+
+	public String getCest() {
+		return cest;
+	}
+
+	public void setCest(String cest) {
+		this.cest = cest;
+	}
+
+	public String getAliquota() {
+		return aliquota;
+	}
+
+	public void setAliquota(String aliquota) {
+		this.aliquota = aliquota;
+	}
+
+	public String getReducao() {
+		return reducao;
+	}
+
+	public void setReducao(String reducao) {
+		this.reducao = reducao;
+	}
+
+	public String getIpi() {
+		return ipi;
+	}
+
+	public void setIpi(String ipi) {
+		this.ipi = ipi;
+	}
+
+	public String getPiscofins() {
+		return piscofins;
+	}
+
+	public void setPiscofins(String piscofins) {
+		this.piscofins = piscofins;
 	}
 	
 	

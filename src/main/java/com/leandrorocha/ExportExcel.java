@@ -35,6 +35,30 @@ public class ExportExcel {
 		
 		cell = row.createCell(1);
 		cell.setCellValue("Descricao");
+		
+		cell = row.createCell(2);
+		cell.setCellValue("CFOP");
+		
+		cell = row.createCell(3);
+		cell.setCellValue("NCM");
+		
+		cell = row.createCell(4);
+		cell.setCellValue("CST");
+		
+		cell = row.createCell(5);
+		cell.setCellValue("CSON");
+		
+		cell = row.createCell(6);
+		cell.setCellValue("CEST");
+		
+		cell = row.createCell(7);
+		cell.setCellValue("ALIQUOTA");
+		
+		cell = row.createCell(8);
+		cell.setCellValue("IPI");
+		
+		cell = row.createCell(9);
+		cell.setCellValue("PISCOFINS");
 	}
 
 	private void writeDataRows() {
@@ -48,6 +72,30 @@ public class ExportExcel {
 			
 			cell = row.createCell(1);
 			cell.setCellValue(produto.getDescricao());
+			
+			cell = row.createCell(2);
+			cell.setCellValue(produto.getCfop());
+			
+			cell = row.createCell(3);
+			cell.setCellValue(produto.getNcm());
+			
+			cell = row.createCell(4);
+			cell.setCellValue(produto.getCst());
+			
+			cell = row.createCell(5);
+			cell.setCellValue(produto.getCsosn());
+			
+			cell = row.createCell(6);
+			cell.setCellValue(produto.getCest());
+			
+			cell = row.createCell(7);
+			cell.setCellValue(produto.getAliquota());
+			
+			cell = row.createCell(8);
+			cell.setCellValue(produto.getIpi());
+			
+			cell = row.createCell(9);
+			cell.setCellValue(produto.getPiscofins());
 		}
 	}
 	
@@ -62,7 +110,7 @@ public class ExportExcel {
 		workbook.write(output);
 		workbook.close();
 		
-		System.out.println("Arquivo exportado");
+		System.out.println("Arquivo exportado com sucesso");
 		} catch (Exception e) {
 			System.err.println(e);
 		}
