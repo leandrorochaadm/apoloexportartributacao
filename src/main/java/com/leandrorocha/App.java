@@ -9,8 +9,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class App {
-	public static void main(String[] args) {
-		System.out.println("Hello World!");
+	public static void main(String[] args) throws IOException {
+//		System.out.println("Hello World!");
 
 //        EntityManagerFactory emf =  Persistence.createEntityManagerFactory("apolo");
 //        EntityManager em = emf.createEntityManager();
@@ -36,17 +36,12 @@ public class App {
 		List<Produto> produtos = new ArrayList<Produto>();
 		produtos.add(new Produto("000001", "produto 1"));
 		produtos.add(new Produto("000002", "produto 2"));
+		produtos.add(new Produto("000003", "produto 3"));
+		produtos.add(new Produto("000004", "produto 4"));
 		
 
 		ExportExcel export = new ExportExcel(produtos);
-		try {
+	
 			export.export();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 	}
-
-
 }

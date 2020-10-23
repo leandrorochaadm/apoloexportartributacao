@@ -1,5 +1,6 @@
 package com.leandrorocha;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,15 +12,16 @@ public class Produto {
 	@Id
 	private String codigo;
 	
-	private String produto;
+	@Column(name = "produto")
+	private String descricao;
 	
 	public Produto() {
 		
 	}
 	
-	public Produto(String codigo, String produto) {
+	public Produto(String codigo, String descricao) {
 		this.codigo = codigo;
-		this.produto = produto;
+		this.descricao = descricao;
 	}
 
 	public String getCodigo() {
@@ -30,17 +32,17 @@ public class Produto {
 		this.codigo = codigo;
 	}
 
-	public String getProduto() {
-		return produto;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setProduto(String produto) {
-		this.produto = produto;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	@Override
 	public String toString() {
-		return "Produto [codigo=" + codigo + ", produto=" + produto + "]";
+		return "Produto [codigo=" + codigo + ", descricao=" + descricao + "]";
 	}
 	
 	

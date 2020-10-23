@@ -1,5 +1,6 @@
 package com.leandrorocha;
 
+import java.io.Console;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -28,15 +29,31 @@ public class ExportExcel {
 	}
 	private void writeHeaderRow() {
 		Row row = sheet.createRow(0);
+		
 		Cell cell = row.createCell(0);
 		cell.setCellValue("Codigo");
+		
+		cell = row.createCell(1);
+		cell.setCellValue("Descricao");
 	}
 
 	private void writeDataRows() {
+		int rowCount = 1;
+		
+		for(Produto produto : listProdutos) {
+			Row row = sheet.createRow(rowCount++);
+			
+			Cell cell = row.createCell(0);
+			cell.setCellValue(produto.getCodigo());
+			
+			cell = row.createCell(1);
+			cell.setCellValue(produto.getDescricao());
+		}
 	}
 	
 	public void export() throws IOException {
-	
+		System.out.println("Aguarde... processando planilha");
+		try {
 		writeHeaderRow();
 		writeDataRows();
 		
@@ -46,6 +63,9 @@ public class ExportExcel {
 		workbook.close();
 		
 		System.out.println("Arquivo exportado");
+		} catch (Exception e) {
+			System.err.println(e);
+		}
 	}
 
 }
