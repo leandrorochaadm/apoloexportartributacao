@@ -4,22 +4,39 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="apolo">
-
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- Implementação do JPA, no nosso caso Hibernate -->
+
+		<!-- Aqui são listadas todas as entidades -->
+	<!-- 	<class>com.leandrorocha.Produto</class> -->
+
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:firebirdsql://localhost:3050/C:/apolo/BD/base.fdb?encoding=NONE" />
 			<property name="javax.persistence.jdbc.user" value="sysdba" />
-			<property name="javax.persistence.jdbc.driver"
-				value="org.firebirdsql.jdbc.FBDriver" />
 			<property name="javax.persistence.jdbc.password"
 				value="masterkey" />
+				
+ 			<property name="javax.persistence.jdbc.driver"
+				value="org.firebirdsql.jdbc.FBDriver" />
+			<property name="hibernate.connection.driver_class"
+				value="org.firebirdsql.jdbc.FBDriver" />
+
+<!-- 			<property name="dialect"
+				value="org.hibernate.dialect.FirebirdDialect" />
+			<property name="cache.provider_class"
+				value="org.hibernate.cache.NoCacheProvider" />
+			<property name="current_session_context_class"
+				value="thread" />  -->
+
 			<property
 				name="javax.persistence.schema-generation.database.action"
 				value="none" />
-				<property name="hibernate.show_sql" value="true"/>
-				<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+
 		</properties>
 	</persistence-unit>
 </persistence>

@@ -1,15 +1,11 @@
 package com.leandrorocha;
 
-import java.io.Console;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.List;
 
-import javax.imageio.stream.FileCacheImageOutputStream;
-
-import org.apache.poi.poifs.filesystem.DocumentOutputStream;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -29,7 +25,7 @@ public class ExportExcel {
 	}
 	private void writeHeaderRow() {
 		Row row = sheet.createRow(0);
-		
+	//Código|Produto|NCM|CST|CSOSN|Aliquota|CFOP
 		Cell cell = row.createCell(0);
 		cell.setCellValue("Codigo");
 		
@@ -37,22 +33,22 @@ public class ExportExcel {
 		cell.setCellValue("Descricao");
 		
 		cell = row.createCell(2);
-		cell.setCellValue("CFOP");
-		
-		cell = row.createCell(3);
 		cell.setCellValue("NCM");
 		
-		cell = row.createCell(4);
+		cell = row.createCell(3);
 		cell.setCellValue("CST");
 		
+		cell = row.createCell(4);
+		cell.setCellValue("CSOSN");
+		
 		cell = row.createCell(5);
-		cell.setCellValue("CSON");
+		cell.setCellValue("ALIQUOTA");
 		
 		cell = row.createCell(6);
-		cell.setCellValue("CEST");
+		cell.setCellValue("CFOP");
 		
 		cell = row.createCell(7);
-		cell.setCellValue("ALIQUOTA");
+		cell.setCellValue("CEST");
 		
 		cell = row.createCell(8);
 		cell.setCellValue("IPI");
@@ -66,7 +62,7 @@ public class ExportExcel {
 		
 		for(Produto produto : listProdutos) {
 			Row row = sheet.createRow(rowCount++);
-			
+		//	Código|Produto|NCM|CST|CSOSN|Aliquota|CFOP
 			Cell cell = row.createCell(0);
 			cell.setCellValue(produto.getCodigo());
 			
@@ -74,22 +70,22 @@ public class ExportExcel {
 			cell.setCellValue(produto.getDescricao());
 			
 			cell = row.createCell(2);
-			cell.setCellValue(produto.getCfop());
-			
-			cell = row.createCell(3);
 			cell.setCellValue(produto.getNcm());
 			
-			cell = row.createCell(4);
+			cell = row.createCell(3);
 			cell.setCellValue(produto.getCst());
 			
-			cell = row.createCell(5);
+			cell = row.createCell(4);
 			cell.setCellValue(produto.getCsosn());
 			
+			cell = row.createCell(5);
+			cell.setCellValue(produto.getAliquota());
+			
 			cell = row.createCell(6);
-			cell.setCellValue(produto.getCest());
+			cell.setCellValue(produto.getCfop());
 			
 			cell = row.createCell(7);
-			cell.setCellValue(produto.getAliquota());
+			cell.setCellValue(produto.getCest());
 			
 			cell = row.createCell(8);
 			cell.setCellValue(produto.getIpi());
